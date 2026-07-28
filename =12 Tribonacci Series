@@ -1,0 +1,15 @@
+def tribonacci(sequence, n):
+    if n == 0:
+        return []
+    if n == 1:
+        return [sequence[0]]
+    if n == 2:
+        return sequence[0:2]
+    if n == 3:
+        return sequence[0:3]
+    while len(sequence) < n:
+        next_sequence = sequence[-1] + sequence[-2] + sequence[-3]
+        sequence.append(next_sequence)
+    return sequence
+
+print(tribonacci([1, 1, 2], 10))
