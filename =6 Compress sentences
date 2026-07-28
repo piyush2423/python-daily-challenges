@@ -1,0 +1,9 @@
+def compress(sentence):
+    if sentence=='':
+        return ''
+    s=sentence.lower().split(' ')
+    a=[]
+    for x in s:
+        if x not in a:
+            a.append(x)
+    return ''.join(str(a.index(x)) for x in s)
