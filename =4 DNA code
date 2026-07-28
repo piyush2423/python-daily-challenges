@@ -1,0 +1,14 @@
+def DNA_strand(dna):
+    ndna=""
+    for x in dna:
+        if x == "A":
+            ndna=ndna+"T"
+        elif x == "T":
+            ndna=ndna+"A"
+        elif x == "G":
+            ndna=ndna+"C"
+        elif x == "C":
+            ndna=ndna+"G"
+        else:
+            ndna=ndna+x
+    return ndna
