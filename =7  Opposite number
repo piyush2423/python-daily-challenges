@@ -1,0 +1,6 @@
+def opposite(n):
+    if n > 0 or n < 0:
+        return -1*n
+    else:
+        return 0
+print(opposite(0))
