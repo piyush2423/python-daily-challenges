@@ -1,0 +1,9 @@
+import re
+
+def to_camel_case(text):
+    words = re.split('[-_]', text)
+    # First word stays as-is
+    first_word = words[0]
+    # Capitalize subsequent words
+    rest = [w.capitalize() for w in words[1:]]
+    return first_word + ''.join(rest)
