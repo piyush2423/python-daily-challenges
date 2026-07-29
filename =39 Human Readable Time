@@ -1,0 +1,9 @@
+def make_readable(seconds):
+    seconds = int(seconds)
+    if seconds > -1 and seconds <= 359999:
+        hours = seconds//3600
+        mins = (seconds%3600)//60
+        secs = (seconds%60)
+        return f"{hours:02}:{mins:02}:{secs:02}"
+    else:
+        return "Invalid"
