@@ -1,0 +1,13 @@
+import os
+
+file = "<Enter where file is>"
+destination = "<Enter destination where to send>"
+
+try:
+    if os.path.exists(destination):
+        print("Its already there")
+    else:
+        os.replace(file,destination)
+        print("Saved")
+except FileNotFoundError:
+    print(file+ "file not found")
