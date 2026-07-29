@@ -1,0 +1,6 @@
+def array_diff(a, b):
+    new = []
+    for x in a:
+        if x not in b:
+            new.append(x)
+    return new
