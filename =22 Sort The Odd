@@ -1,0 +1,11 @@
+def sort_array(source_array):
+    odds = sorted([x for x in source_array if x % 2 != 0])
+    odd_index = 0
+    result = []
+    for num in source_array:
+        if num % 2 != 0:
+            result.append(odds[odd_index])
+            odd_index += 1
+        else:
+            result.append(num)
+    return result
