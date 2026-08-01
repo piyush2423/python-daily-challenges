@@ -1,0 +1,4 @@
+def move_zeros(lst):
+    nonzero = [x for x in lst if x != 0]
+    zero = [0] * lst.count(0)              
+    return nonzero + zero
