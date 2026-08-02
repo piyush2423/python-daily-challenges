@@ -1,0 +1,12 @@
+def next_version(version):
+    parts = list(map(int, version.split('.')))
+    
+    i = len(parts) - 1
+    while i >= 0:
+        parts[i] += 1
+        if i == 0 or parts[i] < 10:
+            break
+        parts[i] = 0
+        i -= 1
+    
+    return '.'.join(map(str, parts))
