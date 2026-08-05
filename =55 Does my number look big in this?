@@ -1,0 +1,6 @@
+def narcissistic( value ):
+    power = 0
+    digit= [int(x) for x in str(value)]
+    for x in digit:
+        power += x**(len(digit))
+    return (True if power == value else False)
