@@ -1,0 +1,8 @@
+def order(sentence):
+  newsentence = []
+  words = sentence.split()
+  for x in words:
+    for ch in x:
+      if ch.isdigit():
+        newsentence.insert(int(ch)-1, x)
+  return " ".join(newsentence) 
