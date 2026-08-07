@@ -1,0 +1,9 @@
+from tkinter import *
+
+window = Tk()
+
+label = Label(window, text= "hello world“)
+
+label.pack()
+
+window.mainloop()
