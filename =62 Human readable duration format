@@ -1,0 +1,32 @@
+def format_duration(seconds):
+    if seconds == 0:
+        return "now"
+    
+    year = seconds // 31536000
+    seconds %= 31536000
+    
+    days = seconds // 86400
+    seconds %= 86400
+    
+    hours = seconds // 3600
+    seconds %= 3600
+    
+    mins = seconds // 60
+    secs = seconds % 60
+    
+    parts = []
+    if year > 0:
+        parts.append(str(year) + " year" + ("s" if year > 1 else ""))
+    if days > 0:
+        parts.append(str(days) + " day" + ("s" if days > 1 else ""))
+    if hours > 0:
+        parts.append(str(hours) + " hour" + ("s" if hours > 1 else ""))
+    if mins > 0:
+        parts.append(str(mins) + " minute" + ("s" if mins > 1 else ""))
+    if secs > 0 or not parts:  # always show seconds if nothing else
+        parts.append(str(secs) + " second" + ("s" if secs > 1 else ""))
+    
+    if len(parts) > 1:
+        return ", ".join(parts[:-1]) + " and " + parts[-1]
+    else:
+        return parts[0]
