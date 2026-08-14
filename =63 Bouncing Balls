@@ -1,0 +1,9 @@
+def bouncing_ball(h, bounce, window):
+    if not (h > 0 and 0 < bounce < 1 and window < h):
+        return -1
+    
+    count = 1  # first fall
+    while h * bounce > window:
+        count += 2  # seen going up and down
+        h *= bounce
+    return count
