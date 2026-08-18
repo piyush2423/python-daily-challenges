@@ -1,0 +1,8 @@
+def get_count(sentence):
+    count = 0
+    vowal = "a,e,i,o,u,A,E,I,O,U"
+    for x in sentence:
+        for y in x:
+            if y in vowal:
+                count += 1
+    return count
