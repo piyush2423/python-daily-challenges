@@ -1,0 +1,8 @@
+def enough(cap, on, wait):
+    if cap >= on+wait:
+        return (0)
+    elif cap - on >= wait:
+        return f"He can fit all {wait} passengers"
+    else:
+        diff = wait - (cap - on)
+        return diff
