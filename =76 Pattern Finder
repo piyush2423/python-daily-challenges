@@ -1,0 +1,22 @@
+def find_occurrences(text, pattern):
+    positions = []
+    start = 0
+    while True:
+        index = text.find(pattern, start)
+        if index == -1:
+            break
+        positions.append(index)
+        start = index + 1
+    found = len(positions) > 0
+    count = len(positions)
+    
+    return (found, count, positions)
+    
+
+# Read input
+text = input()
+pattern = input()
+
+# Call your function and print the result
+result = find_occurrences(text, pattern)
+print(result)
