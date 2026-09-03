@@ -1,0 +1,12 @@
+def sum_array(a):
+    if not a:
+        return 0
+    
+    # Initialize total
+    total = 0
+    
+    # Loop through each number and add it to total
+    for num in a:
+        total += num
+    
+    return total
