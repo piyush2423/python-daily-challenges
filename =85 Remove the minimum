@@ -1,0 +1,6 @@
+def remove_smallest(numbers):
+    if not numbers:  # handle empty list
+        return []
+    min_value = min(numbers)  # find smallest value
+    min_index = numbers.index(min_value)  # find first occurrence
+    return numbers[:min_index] + numbers[min_index+1:]  # rebuild list without it
