@@ -1,0 +1,13 @@
+def get_sum(a, b):
+    # If both are equal, just return one of them
+    if a == b:
+        return a
+    
+    # Find the smaller and larger number
+    first, last = min(a, b), max(a, b)
+    
+    # Count how many numbers are in the range
+    n = last - first + 1
+    
+    # Apply arithmetic series formula
+    return n * (first + last) // 2
