@@ -1,0 +1,4 @@
+def printer_error(s):
+    # valid colors are from 'a' to 'm'
+    errors = sum(1 for ch in s if ch < 'a' or ch > 'm')
+    return f"{errors}/{len(s)}"
