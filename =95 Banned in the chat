@@ -1,0 +1,53 @@
+from collections import deque
+
+def solve(banned: list[str], log: str) -> int:
+    # Normalize case (ASCII lowercase)
+    banned = [w.lower() for w in banned]
+    log = log.lower()
+
+    # Build trie
+    trie = [{}]  # list of dicts for children
+    fail = [0]   # failure links
+    output = [[]]  # output list of banned indices ending here
+
+    for idx, word in enumerate(banned):
+        node = 0
+        for ch in word:
+            if ch not in trie[node]:
+                trie[node][ch] = len(trie)
+                trie.append({})
+                fail.append(0)
+                output.append([])
+            node = trie[node][ch]
+        output[node].append(idx)
+
+    # Build failure links using BFS
+    q = deque()
+    for ch, nxt in trie[0].items():
+        q.append(nxt)
+        fail[nxt] = 0
+
+    while q:
+        r = q.popleft()
+        for ch, u in trie[r].items():
+            q.append(u)
+            f = fail[r]
+            while f and ch not in trie[f]:
+                f = fail[f]
+            fail[u] = trie[f][ch] if ch in trie[f] else 0
+            output[u].extend(output[fail[u]])
+
+    # Scan log
+    count = 0
+    node = 0
+    for ch in log:
+        while node and ch not in trie[node]:
+            node = fail[node]
+        if ch in trie[node]:
+            node = trie[node][ch]
+        else:
+            node = 0
+        if output[node]:
+            count += len(output[node])
+
+    return count
