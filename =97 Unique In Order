@@ -1,0 +1,14 @@
+def unique_in_order(sequence):
+    result = []
+    prev = None
+    for item in sequence:
+        if item != prev:   # only add if different from the last one
+            result.append(item)
+        prev = item
+    return result
+
+# Examples:
+print(unique_in_order('AAAABBBCCDAABBB'))  # ['A', 'B', 'C', 'D', 'A', 'B']
+print(unique_in_order('ABBCcAD'))          # ['A', 'B', 'C', 'c', 'A', 'D']
+print(unique_in_order([1, 2, 2, 3, 3]))    # [1, 2, 3]
+print(unique_in_order((1, 2, 2, 3, 3)))    # [1, 2, 3]
