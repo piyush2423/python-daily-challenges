@@ -1,0 +1,11 @@
+def expanded_form(num):
+    num_str = str(num)
+    parts = []
+    
+    for i, digit in enumerate(num_str):
+        if digit != "0":
+            # Place value = digit * 10^(remaining length - 1)
+            place_value = int(digit) * (10 ** (len(num_str) - i - 1))
+            parts.append(str(place_value))
+    
+    return " + ".join(parts)
