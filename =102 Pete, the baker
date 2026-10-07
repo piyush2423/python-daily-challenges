@@ -1,0 +1,7 @@
+def cakes(recipe, available):
+    counts = []
+    for ingredient, amount in recipe.items():
+        if ingredient not in available:
+            return 0
+        counts.append(available[ingredient] // amount)
+    return min(counts)
