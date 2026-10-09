@@ -1,0 +1,6 @@
+def freq_seq(s, sep):
+    result = []
+    for ch in s:
+        count = s.count(ch)
+        result.append(str(count))
+    return sep.join(result)
