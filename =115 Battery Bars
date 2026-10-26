@@ -1,0 +1,3 @@
+def battery_bars(percent):
+    lit = percent // 20
+    return "[" + "#" * lit + "." * (5 - lit) + "]"
