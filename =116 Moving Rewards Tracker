@@ -1,0 +1,20 @@
+# Read the total purchase amount
+purchase_amount = float(input())
+
+# TODO: Calculate loyalty points (1 point per $10 spent, rounded down)
+points = int(purchase_amount/10)
+# Read the starting index
+start_index = int(input())
+
+# Read the number of boxes, then the box labels (one per line)
+n = int(input())
+boxes = []
+# TODO: read n labels with input() and append each one to boxes
+for x in range(n):
+    label = input()
+    boxes.append(label)
+# TODO: Print the loyalty points on the first line
+print(points)
+# TODO: Print every box from start_index to the end, one per line
+for i in range(start_index, len(boxes)):
+    print(boxes[i])
