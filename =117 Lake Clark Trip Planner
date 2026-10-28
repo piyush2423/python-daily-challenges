@@ -1,0 +1,36 @@
+# Read the trip expense amount
+expense = int(input())
+
+# Read the list of student ages
+ages = list(map(int, input().split()))
+
+# Read the target age for pairing
+target_age = int(input())
+
+# Read the number of trip days
+days = int(input())
+
+# Round expense down to nearest multiple of 5
+expense = round(expense / 5)*5
+
+# Find pair whose sum is closest to target age
+best_diff = float('inf')
+x, y = ages[0], ages[1]
+
+for i in range(len(ages)):
+    for j in range(i + 1, len(ages)):
+        diff = abs(ages[i] + ages[j] - target_age)
+
+        if diff < best_diff:
+            best_diff = diff
+            x, y = ages[i], ages[j]
+
+# Total supplies using triangular numbers
+add = 0
+for i in range(1, days + 1):
+    add += i
+
+# Output
+print(expense)
+print(x, y)
+print(add)
