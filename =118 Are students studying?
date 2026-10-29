@@ -1,0 +1,80 @@
+percentages = []
+def calculation(marks):
+    lcount = 0
+    hcount = 0
+    for x in marks:
+        if x >= 75:
+            hcount += 1
+        elif x < 40:
+            lcount +=1
+    total = sum(marks)
+    avrage = total/len(marks)
+    High = max(marks)
+    low = min(marks)
+    print("Total marks of this student: ", total)
+    print("Average marks of this student: ", avrage)
+    print("Hightest marks of this student: ", High)
+    print("Lowest marks of this student: ", low)
+    percent = (total/500)*100
+    percentages.append(percent)
+    print("------------------------------------------------")
+    print("You scored", percent, '%')
+    print("------------------------------------------------")
+    if percent < 40 or lcount > 0:
+        print("Grade obtained: F")
+    elif percent >= 90:
+        print("Grade obtained: A+")
+    elif percent >= 80:
+        print("Grade obtained: A")
+    elif percent >= 70:
+        print("Grade obtained: B")
+    elif percent >= 60:
+        print("Grade obtained: C")
+    elif percent >= 40:
+        print("Grade obtained: D")
+        
+    print("------------------------------------------------")
+    if max(marks)>74:
+        print("In", hcount, "subjects you scored 75 or above marks")
+        
+    if percent > 85:
+        print("You are eligible for merit certificate")
+        
+def classcalculation(all):
+    passed = 0
+    failed = 0
+    for i in all:
+        if i < 40:
+            failed += 1
+        else:
+            passed +=1
+    avrage = sum(all)/len(all)
+    hpercent = max(all)
+    print("Highest percentage is: ", hpercent)
+    print("Average percentage is: ", avrage)
+    print("Students passed: ", passed)
+    print("Student failed: ", failed)
+    
+student = 3
+while True:
+    marks = []
+    print("ENTER DETAILS OF", student, "STUDENT")
+    name = input("Enter the name of the student: ")
+    roll = int(input("Enter the roll number: "))
+    for x in range(1,6):
+        while True:
+            got = int(input("Enter the marks of "+str(x)+" subject: "))
+            
+            if 0 <= got <= 100:
+                break
+            print("Invalid marks! Enter marks between 0 and 100.")
+        marks.append(got)
+    calculation(marks)
+            
+    more = input("Want to add more students (yes/no): ").lower()
+    if more != "yes":
+        break
+    
+    student += 1
+    
+classcalculation(percentages)
