@@ -4,4 +4,4 @@ def solution(number):
         for x in range(0,number):
             if x % 3 == 0 or x % 5 == 0:
                  total += x
-    return total
+    return tota
