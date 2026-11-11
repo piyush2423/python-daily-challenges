@@ -1,0 +1,21 @@
+num1 = int(input())
+num2 = int(input())
+
+power = num1**num2
+power = str(power)
+leading_digit = power[0]
+
+print(leading_digit)
+
+message = input()
+
+vowels = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+rearranged = ""
+no = ""
+for x in message:
+    if x in vowels:
+        rearranged += x
+    else:
+        no += x        
+
+print(rearranged+no)
