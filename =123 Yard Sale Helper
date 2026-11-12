@@ -1,0 +1,15 @@
+prices = list(map(int, input().split()))
+phone = input().strip()
+
+# Product of the first two prices
+print(prices[0] * prices[1])
+
+# Validate phone number
+valid = (
+    len(phone) == 12 and
+    phone[3] == '-' and
+    phone[7] == '-' and
+    all(phone[i].isdigit() for i in range(12) if i not in (3, 7))
+)
+
+print("Valid" if valid else "Invalid")
