@@ -1,0 +1,20 @@
+shelf_measurement = int(input())
+
+target_size = int(input())
+
+print("YES" if abs(shelf_measurement - target_size) <= 5 else "NO")
+
+product_code = input()
+
+category_letter = input()
+
+product_code = str(product_code)
+print("VALID" if category_letter == product_code[-1] else "INVALID")
+
+# Read the receipt number
+receipt_number = int(input())
+
+for x in range(receipt_number+1,100000):
+    if str(x) == str(x)[::-1]:
+        print(x)
+        break
