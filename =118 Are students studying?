@@ -77,4 +77,4 @@ while True:
     
     student += 1
     
-classcalculation(percentages)
+classcalculation(percentages) 
