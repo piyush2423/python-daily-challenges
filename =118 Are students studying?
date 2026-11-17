@@ -17,7 +17,7 @@ def calculation(marks):
     print("Lowest marks of this student: ", low)
     percent = (total/500)*100
     percentages.append(percent)
-    print("------------------------------------------------")
+    print("-----------------------------------------------")
     print("You scored", percent, '%')
     print("------------------------------------------------")
     if percent < 40 or lcount > 0:
