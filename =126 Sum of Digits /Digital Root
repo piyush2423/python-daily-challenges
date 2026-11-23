@@ -1,0 +1,8 @@
+def digital_root(n):
+    sum=0
+    a=len(n)
+    for x in n:
+        if x in range[::a]:
+            if x > 0: 
+                sum=sum+0
+                return (x)
