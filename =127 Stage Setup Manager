@@ -14,3 +14,6 @@ grid = []
 for i in range(n):
     row = input()
     grid.append(row)
+rotated = zip(*grid[::-1])
+for row in rotated:
+    print(''.join(row))
