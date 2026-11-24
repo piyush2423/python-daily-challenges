@@ -1,0 +1,16 @@
+speakers = int(input())
+
+i = 0
+while i*i < speakers:
+    i+=1
+if i*i == speakers:
+    print("Perfect square")
+else:
+    print("Not a perfect square")
+
+n = int(input())
+
+grid = []
+for i in range(n):
+    row = input()
+    grid.append(row)
